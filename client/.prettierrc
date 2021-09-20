@@ -1,0 +1,12 @@
+// TODO : 보시고 수정하거나 추가할 부분 있으면 알려주세요😉
+// server에도 똑같이 만드시면 됩니다
+{
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false
+}
