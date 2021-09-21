@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Wrapper>
-        <h1>index를 메인페이지로 만들어야하나 아님 pages안에 따로 만들어야하나 고민중</h1>
+        <h1>index를 메인페이지로 만들어야하나 아님 pages안에 따로 만들어야하나 고민중임</h1>
       </Wrapper>
     </Container>
   );
