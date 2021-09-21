@@ -5,8 +5,6 @@ import styles from '../styles/Home.module.css';
 import styled from 'styled-components';
 import { Container } from 'react-bootstrap';
 
-// TODO : 페이지 구성 알아보기
-
 const Home: NextPage = () => {
   return (
     <Container>
