@@ -34,7 +34,7 @@ const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 12px;
+  padding: 8px 32px;
 
   .logo {
     cursor: pointer;
