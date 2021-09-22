@@ -2,6 +2,8 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
+// 여기가 page 렌더링 진입점인듯?
+// TODO : Header 만들기
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
