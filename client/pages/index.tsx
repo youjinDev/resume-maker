@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
+import styles from '@styles/Home.module.css';
 import styled from 'styled-components';
 import { Container } from 'react-bootstrap';
-import Header from '../components/common/Header';
+import Header from '@/components/common/Header';
 
 const Home: NextPage = () => {
   return (
