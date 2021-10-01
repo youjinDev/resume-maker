@@ -1,3 +1,10 @@
 {
-  "dependencies": {}
+  "scripts": {
+    "server": "npm run start:dev --prefix server",
+    "client": "cd client && yarn dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\"" 
+  },
+  "dependencies": {
+    "concurrently": "^6.2.2"
+  }
 }
