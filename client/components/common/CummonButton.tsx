@@ -1,22 +1,22 @@
-import { AwesomeButton } from 'react-awesome-button';
-import 'react-awesome-button/dist/styles.css';
+import Button from 'react-bootstrap/Button';
 import styled from 'styled-components';
 import theme from '@/styles/theme';
 
 interface ButtonProps {
   label: string;
-  onPress?: () => void;
-  targetLink?: any;
+  onPress: () => void | undefined;
+  // targetLink?: any;
+  width?: number;
 }
 
-export const CommonButton = ({ label, onPress, targetLink }: ButtonProps) => {
+export const CommonButton = ({ label, onPress, width }: ButtonProps) => {
   return (
-    <MainButton type="secondary" onPress={() => onPress()}>
+    <MainButton variant="primary" onClick={() => onPress()} width={width}>
       {label}
     </MainButton>
   );
 };
 
-const MainButton = styled(AwesomeButton)`
-  width: 100px;
+const MainButton = styled(Button)`
+  width: ${(props) => (props.width ? props.width : 100)}px;
 `;
