@@ -1,9 +1,11 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import App from 'next/app';
 
 // 여기가 page 렌더링 진입점인듯?
-// TODO : Header 만들기
+// 모든 페이지에서 공통으로 필요한 기능은 여기에서 구현
+// ex) 페이지가 전환되어도 메뉴 UI를 그대로 유지하고 싶을 때
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -19,4 +21,5 @@ function MyApp({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
 export default MyApp;

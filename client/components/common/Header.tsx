@@ -7,17 +7,18 @@ import Image from 'next/image';
 import { CommonButton } from '@/components/common/CummonButton';
 import { useRouter } from 'next/dist/client/router';
 
+// Todo : auth login 상태에 따라 헤더 바뀌어야 함
 const Header: FunctionComponent = () => {
   const router = useRouter();
   return (
     <>
       <HeaderContainer>
-        <Link href="/Main">
+        <Link href="/Main" passHref>
           <Image className="logo" src={resume} alt="Main Logo" width={50} height={50} />
         </Link>
         <ul>
           <li>
-            <Link href="/WriteResume">Write</Link>
+            <Link href="/Resume">Write</Link>
           </li>
           <li>
             <CommonButton
