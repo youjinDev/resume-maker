@@ -1,46 +1,71 @@
 import React, { Children } from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import { Formik, Field, Form, FormikHelpers } from 'formik';
+import Image from 'next/image';
+import styled from 'styled-components';
+import step1_data from '@/pages/Resume/Step1';
 
-interface Values {
-  resumeForm: 'Kor' | 'Eng';
+interface IValues {
+  value: string;
+  img?: StaticImageData;
 }
 
-// label value이랑 img src 배열로 주면
-// map 해서 라디오 그룹 만들어주는 컴포넌트
+interface IProps {
+  data: Array<IValues>;
+  handleData: (data: any) => void;
+}
 
-export const FormRadioBtn = () => {
+// label value이랑 img src 배열 props로 주면
+// map해서 라디오 그룹 만들어주는 컴포넌트
+export const FormRadioBtn = ({ data, handleData }: IProps) => {
   return (
     <>
-      <div>
-        <Formik
-          initialValues={{
-            picked: 'Kor',
-          }}
-          onSubmit={async (values) => {
-            await new Promise((r) => setTimeout(r, 500));
-            alert(JSON.stringify(values, null, 2));
-          }}
-        >
-          {({ values }) => (
-            <Form>
-              <div id="my-radio-group">Picked</div>
-              <div role="group" aria-labelledby="my-radio-group">
-                <label>
-                  <Field type="radio" name="picked" value="Kor" />
-                  국문
-                </label>
-                <label>
-                  <Field type="radio" name="picked" value="Eng" />
-                  영문
-                </label>
-                <div>Picked: {values.picked}</div>
-              </div>
-              <button type="submit">Submit</button>
-            </Form>
-          )}
-        </Formik>
-      </div>
+      <Formik
+        initialValues={{
+          picked: data[0].value,
+        }}
+        onSubmit={(values) => {
+          handleData(values.picked);
+        }}
+      >
+        {({ values }) => (
+          <FormContainer>
+            <div className="container" role="group" aria-labelledby="my-radio-group">
+              {data.map(({ value, img }: IValues, i: number) => (
+                <Wrapper key={i}>
+                  {img && <Image src={img} alt="." width={200} height={200} />}
+                  <label>
+                    <Field className="field" type="radio" name="picked" value={value} />
+                    {value}
+                  </label>
+                </Wrapper>
+              ))}
+            </div>
+            <div>Picked: {values.picked}</div>
+            <button type="submit">Submit</button>
+          </FormContainer>
+        )}
+      </Formik>
     </>
   );
 };
+
+const FormContainer = styled(Form)`
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .field {
+    margin-right: 4px;
+  }
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
