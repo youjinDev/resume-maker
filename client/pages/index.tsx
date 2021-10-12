@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Header />
-      <Wrapper>
+      <Wrapper role="wrapper">
         <Main />
       </Wrapper>
       <Footer />
