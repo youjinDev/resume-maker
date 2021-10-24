@@ -3,7 +3,6 @@ import React, { Children } from 'react';
 import { Formik, Field, Form, FormikHelpers } from 'formik';
 import Image from 'next/image';
 import styled from 'styled-components';
-import step1_data from '@/pages/Resume/Step1';
 
 interface IValues {
   value: string;
